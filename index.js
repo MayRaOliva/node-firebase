@@ -1,11 +1,25 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import mysql from 'mysql';
-import cors from 'cors';
+
 import bcrypt from 'bcrypt';
 import './env.js';
-
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 const app = express();
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBt0ukMfmvvfeW0XunGUIbW4vPxqawwCmw",
+  authDomain: "mayra-utma.firebaseapp.com",
+  projectId: "mayra-utma",
+  storageBucket: "mayra-utma.appspot.com",
+  messagingSenderId: "524538668447",
+  appId: "1:524538668447:web:1035198c7f66bd027a49aa",
+  measurementId: "G-LLN7BQRP3D"
+};
+
+const firebaseapp = initializeApp(firebaseConfig);
+
+
 
 
 // config bcrypt
